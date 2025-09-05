@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import OneBlog from "./OneBlog";
-const Blogs = () => {
+
+const Blogs = ({ handleAddToBookmark, handleMarkAsRead }) => {
   const [cards, setCards] = useState([]);
   useEffect(() => {
     fetch("fakeData.json")
@@ -9,9 +10,13 @@ const Blogs = () => {
   }, []);
   return (
     <div className="w-full sm:w-2/3">
-      <h1>blogs available : {cards.length}</h1>
       {cards.map((element, index) => (
-        <OneBlog element={element} key={index}></OneBlog>
+        <OneBlog
+          element={element}
+          key={index}
+          handleAddToBookmark={handleAddToBookmark}
+          handleMarkAsRead={handleMarkAsRead}
+        ></OneBlog>
       ))}
     </div>
   );
