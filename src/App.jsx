@@ -1,10 +1,12 @@
 // import { useState } from "react";
 
+import Header from "./components/Header";
+
 function App() {
   return (
-    <>
-      <h1 className="text-4xl text-red-700">Vite + React</h1>
-    </>
+    <div className="w-11/12 mx-auto">
+      <Header></Header>
+    </div>
   );
 }
 
